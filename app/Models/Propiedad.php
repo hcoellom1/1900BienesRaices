@@ -10,6 +10,7 @@ class Propiedad extends Model
     use HasFactory;
 
     protected $table = 'propiedades';
+    protected $primaryKey = 'codigoPropiedad';
     public $timestamps = false;
 }
 

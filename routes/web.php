@@ -20,6 +20,11 @@ Route::get('/propiedades/crear', [PropiedadController::class, 'create'])->name('
 
 Route::post('/propiedades/guardar', [PropiedadController::class, 'store'])->name('propiedad.store');
 
+Route::get('/propiedad/editar/{id}',[PropiedadController::class, 'editar'])->name('propiedad.edit');
+
+Route::get('/propiedad/eliminar/{id}', [PropiedadController::class, 'eliminar'])->name('propiedad.eliminar');
+
+Route::put('/propiedad/actualizar/{id}', [PropiedadController::class, 'actualizar'])->name('propiedad.actualizar');
 
 //Verbos http
 //get mostrar o acceder

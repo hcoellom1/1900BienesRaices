@@ -14,22 +14,31 @@
         <br>
         <a href="{{route('propiedad.create')}}" class="btn btn-primary">Agregar Propiedad</a>
         
-        <table>
+        <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Color</th>
-                    <th>Metros</th>
-                    <th>Precio</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Color</th>
+                    <th scope="col">Metros</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
                 </tr>
             </thead>
             <body>
+               
                 @foreach ($propiedades as $propiedad)
                     <tr>
                         <td>{{ $propiedad->codigoPropiedad }}</td>
                         <td>{{ $propiedad->color }}</td>
                         <td>{{ $propiedad->metros }}</td>
                         <td>{{ $propiedad->metros * $propiedad->costoxmtr }}</td>
+                        <td>
+                            <a href="{{route('propiedad.edit', $propiedad->codigoPropiedad)}}">Editar</a>
+                        </td>
+                        <td>
+                            <a href="{{route('propiedad.eliminar', $propiedad->codigoPropiedad)}}">Eliminar</a>
+                        </td>
                     </tr>
                 @endforeach
             </body>
