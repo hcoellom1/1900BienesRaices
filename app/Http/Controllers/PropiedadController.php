@@ -52,7 +52,15 @@ class PropiedadController extends Controller
     }
 
     public function eliminar($id){
+        $propiedad = Propiedad::find($id);
+        return view('eliminar', compact('propiedad'));
+    }
 
+    public function destroy($id){
+        $propiedad = Propiedad::find($id);
+        $propiedad->delete();
+
+        return redirect('/');
     }
 
 }

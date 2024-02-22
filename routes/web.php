@@ -26,6 +26,8 @@ Route::get('/propiedad/eliminar/{id}', [PropiedadController::class, 'eliminar'])
 
 Route::put('/propiedad/actualizar/{id}', [PropiedadController::class, 'actualizar'])->name('propiedad.actualizar');
 
+Route::get('/propiedad/destroy/{id}', [PropiedadController::class, 'destroy'])->name('propiedad.destroy');
+
 //Verbos http
 //get mostrar o acceder
 //post guardar
